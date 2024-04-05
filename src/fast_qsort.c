@@ -45,11 +45,11 @@ static inline void swapfunc(void *a, void *b, size_t size, int swaptype)
     }
     else if (swaptype == 1)
     {
-        EXCH(long, a, b, size);
+        EXCH(long, a, b, size / sizeof(long));
     }
     else
     {
-        EXCH(char, a, b, size);
+        EXCH(char, a, b, size / sizeof(char));
     }
 }
 
