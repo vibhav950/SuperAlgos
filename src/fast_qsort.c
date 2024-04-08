@@ -19,7 +19,7 @@ static inline void swapfunc(void *a, void *b, size_t size, int swaptype) __attri
 #define EXCH(TYPE, a, b, size)                       \
     do                                               \
     {                                                \
-        size_t __size = (size);                      \
+        size_t __size = (size) / sizeof(TYPE);       \
         TYPE *__a = (TYPE *)(a), *__b = (TYPE *)(b); \
         do                                           \
         {                                            \
@@ -45,11 +45,11 @@ static inline void swapfunc(void *a, void *b, size_t size, int swaptype)
     }
     else if (swaptype == 1)
     {
-        EXCH(long, a, b, size / sizeof(long));
+        EXCH(long, a, b, size);
     }
     else
     {
-        EXCH(char, a, b, size / sizeof(char));
+        EXCH(char, a, b, size);
     }
 }
 
