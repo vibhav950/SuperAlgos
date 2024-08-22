@@ -6,4 +6,4 @@ Documenting my journey of learning super-optimized algorithms.
 
 ## Current catalogue
 
-* [fast_qsort.c](src/fast_qsort.c) - sort large arrays very fast using quicksort.
+* [vfast_qsort.c](src/vfast_qsort.c) - sort large arrays very fast using quicksort.
