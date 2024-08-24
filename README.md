@@ -7,3 +7,4 @@ Documenting my journey of learning super-optimized algorithms.
 ## Current catalogue
 
 * [vfast_qsort.c](src/vfast_qsort.c) - sort large arrays very fast using quicksort.
+* [vfast_vec.h](src/vfast_vec.h) - fast C++ style vector implementation using macros.
