@@ -9,7 +9,7 @@
  * Part of the vfast_* files in the SuperAlgos GitHub
  * repository (https://github.com/vibhav950/SuperAlgos).
  * 
- * @author vibhav950 on GitHub*
+ * @author vibhav950 on GitHub
  */
 
 #include <stdlib.h>
@@ -61,7 +61,7 @@
       (CAPACITY) > 0 ? (CAPACITY) : VEC_DEFAULT_CAPACITY; \
     (NAME).capacity = sz_new;                             \
     TYPE *p =                                             \
-        (TYPE *)calloc(sz_new, sizeof(TYPE));             \
+        (TYPE *)malloc(sz_new * sizeof(TYPE));            \
     assert(p != NULL);                                    \
     (NAME).p = p;                                         \
   } while (0)
@@ -108,11 +108,13 @@
 #define vec_push(NAME, VAL)                       \
   do {                                            \
     if (vec_full(NAME)) {                         \
+      size_t new_cap =                            \
+        (NAME).capacity + ((NAME).capacity/2) + 1;\
       typeof((NAME).p) p =                        \
         (typeof((NAME).p))realloc((NAME).p,       \
-        ++(NAME).capacity * sizeof((NAME).p[0])); \
+        new_cap * sizeof((NAME).p[0]));           \
       assert(p != NULL);                          \
-      (NAME).capacity++;                          \
+      (NAME).capacity = new_cap;                  \
       (NAME).p = p;                               \
     }                                             \
       (NAME).p[(NAME).length++] = VAL;            \
