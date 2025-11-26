@@ -1,8 +1,8 @@
 # SuperAlgos
 
-Documenting my journey of learning super-optimized algorithms.
+Miscellaneous utilities or algorithms optimized to the teeth.
 
-**Note:** All instances of code snippets, algorithms, or ideas employed in these implementations have been sourced from the public domain, and I have cited them in the respective files.
+**Note:** All instances of code snippets, algorithms, or ideas employed in these implementations have been sourced from the public domain, and I have cited them in their respective files.
 
 ## Current catalogue
 
